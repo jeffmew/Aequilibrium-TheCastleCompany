@@ -52,3 +52,11 @@ func numberOfCastles(stretchOfLand: [Int]) -> Int {
     return numberOfCastles
 }
 
+numberOfCastles(stretchOfLand: [])
+numberOfCastles(stretchOfLand: [1])
+numberOfCastles(stretchOfLand: [1,1])
+numberOfCastles(stretchOfLand: [1,5,3])
+numberOfCastles(stretchOfLand: [1,1,1,2,1,0])
+numberOfCastles(stretchOfLand: [6,1,1,1,6,1])
+numberOfCastles(stretchOfLand: [1,1,1,2,1,0])
+numberOfCastles(stretchOfLand: [1,2,3,4])
