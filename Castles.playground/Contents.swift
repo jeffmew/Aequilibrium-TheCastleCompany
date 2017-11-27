@@ -12,7 +12,7 @@ func numberOfCastles(stretchOfLand: [Int]) -> Int {
         return 1
     }
     
-    guard var previousLandValue = stretchOfLand.first, stretchOfLand.count != 1 else {
+    guard var previousLandValue = stretchOfLand.first else {
         return 0
     }
     
