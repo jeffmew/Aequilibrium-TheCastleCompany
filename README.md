@@ -2,4 +2,4 @@
 
 ### Assumptions Made
 
-The only assumption I made was that you could not build a castle on the last land height. The given assumptions seemed to imply this.
+I made the assumption that the last land value could not be considered a peak or valley because there was no transition from a greater height to a lower height (and vice versa).
