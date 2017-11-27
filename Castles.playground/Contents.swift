@@ -7,16 +7,21 @@ enum terrainType {
 }
 
 func numberOfCastles(stretchOfLand: [Int]) -> Int {
-    guard var previousLandValue = stretchOfLand.first, stretchOfLand.count != 1 else {
-            return 0
+    
+    if stretchOfLand.count == 1 {
+        return 1
     }
     
-    var numberOfCastles = 0
+    guard var previousLandValue = stretchOfLand.first, stretchOfLand.count != 1 else {
+        return 0
+    }
+    
+    var numberOfCastles = 1
+    
     var currentTerrainType: terrainType = .flat
     
     for currentLandValue in stretchOfLand[1...stretchOfLand.count-1] {
         if currentLandValue == previousLandValue {
-            currentTerrainType = .flat
             previousLandValue = currentLandValue
             continue
         }
@@ -29,14 +34,10 @@ func numberOfCastles(stretchOfLand: [Int]) -> Int {
             currentTerrainType = .decline
             numberOfCastles += 1
         case .flat:
-            if currentLandValue == previousLandValue {
-                break
-            } else if currentLandValue > previousLandValue {
+            if currentLandValue > previousLandValue {
                 currentTerrainType = .incline
-                numberOfCastles += 1
             } else {
                 currentTerrainType = .decline
-                numberOfCastles += 1
             }
         case .decline:
             if currentLandValue < previousLandValue {
@@ -60,3 +61,5 @@ numberOfCastles(stretchOfLand: [1,1,1,2,1,0])
 numberOfCastles(stretchOfLand: [6,1,1,1,6,1])
 numberOfCastles(stretchOfLand: [1,1,1,2,1,0])
 numberOfCastles(stretchOfLand: [1,2,3,4])
+numberOfCastles(stretchOfLand: [4,3,2,1])
+numberOfCastles(stretchOfLand: [1,1,2])
